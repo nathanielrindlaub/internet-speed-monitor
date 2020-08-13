@@ -28,11 +28,10 @@ pip install -r requirements.txt
 deactivate
 ```
 
-You may have to grant execution permissions to `speedtest-chron.sh` and/or 
-`env/bin/activate`. To do so run:
+You may have to grant execution permissions to `speedtest-chron.sh`. 
+To do so run:
 ```
-chmod x+ speedtest-chron.sh
-chmod x+ ../env/bin/activate
+chmod +x speedtest-chron.sh
 ```
 Now check that the bash script wroks:
 ```
