@@ -28,6 +28,17 @@ pip install -r requirements.txt
 deactivate
 ```
 
+You may have to grant execution permissions to `speedtest-chron.sh` and/or 
+`env/bin/activate`. To do so run:
+```
+chmod x+ speedtest-chron.sh
+chmod x+ ../env/bin/activate
+```
+Now check that the bash script wroks:
+```
+./speedtest-chron.sh
+```
+
 Create cronjob by opening up chrontab:
 ```
 crontab -e
@@ -35,5 +46,5 @@ crontab -e
 And save the following line (don't forget to add your own project root). This 
 will run the script every half hour.
 ```
-0,30 * * * * cd [path-to-project-root]/internet-speed-monitor/internet-speed-monitor && /usr/bin/python3 speedtest.py
+0,30 * * * * cd [path-to-project-root]/internet-speed-monitor/internet-speed-monitor && ./speedtest-chron.sh
 ```
