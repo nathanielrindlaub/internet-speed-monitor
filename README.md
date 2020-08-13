@@ -13,14 +13,17 @@ cd /home/[user]/internet-speed-monitor
 git clone https://github.com/nathanielrindlaub/internet-speed-monitor.git
 ```
 
-Create a virtual environment and activate it:
+Create a virtual environment and activate it from the project root directory 
+(`/home/[user]/internet-speed-monitor`):
 ```
+pip install virtualenv
 virtualenv env -p python3
 source env/bin/activate
 ```
 
-Install dependencies and deactivate the virtual env:
+CD into the git repo and Install dependencies and deactivate the virtual env:
 ```
+cd internet-speed-monitor
 pip install -r requirements.txt
 deactivate
 ```
@@ -29,7 +32,8 @@ Create cronjob by opening up chrontab:
 ```
 crontab -e
 ```
-And saving the following line (don't forget to add your own project root):
+And save the following line (don't forget to add your own project root). This 
+will run the script every half hour.
 ```
 0,30 * * * * cd [path-to-project-root]/internet-speed-monitor/internet-speed-monitor && /usr/bin/python3 speedtest.py
 ```
